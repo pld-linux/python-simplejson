@@ -1,4 +1,4 @@
-# $Revision: 1.4 $
+# $Revision: 1.5 $
 %define		module		simplejson
 Summary:	Simple, fast, extensible JSON encoder/decoder for Python
 Summary(pl):	Prosty, szybki, rozszerzalny (de)koder JSON dla Pythona
@@ -12,6 +12,7 @@ Source0:	http://cheeseshop.python.org/packages/source/s/simplejson/%{module}-%{v
 URL:		http://undefined.org/python/#simplejson
 BuildRequires:	python >= 1:2.5
 BuildRequires:	rpm-pythonprov
+%pyrequires_eq	python-libs
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
