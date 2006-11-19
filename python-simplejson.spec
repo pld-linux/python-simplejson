@@ -1,4 +1,4 @@
-# $Revision: 1.5 $
+# $Revision: 1.6 $
 %define		module		simplejson
 Summary:	Simple, fast, extensible JSON encoder/decoder for Python
 Summary(pl):	Prosty, szybki, rozszerzalny (de)koder JSON dla Pythona
@@ -40,12 +40,13 @@ python setup.py install \
 	--optimize=2
 
 %py_postclean
+rm -rf $RPM_BUILD_ROOT%{py_sitescriptdir}/simplejson/tests
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%dir %{py_sitescriptdir}/json
-%{py_sitescriptdir}/json/*.py[co]
-%{py_sitescriptdir}/json-%{version}-py*.egg-info
+%dir %{py_sitescriptdir}/simplejson
+%{py_sitescriptdir}/simplejson/*.py[co]
+%{py_sitescriptdir}/simplejson-%{version}-py*.egg-info
