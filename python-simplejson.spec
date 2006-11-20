@@ -1,6 +1,6 @@
-# $Revision: 1.9 $
+# $Revision: 1.10 $
 %define		module		simplejson
-%define     python_version  2.4
+%define     python_version  2.5
 Summary:	Simple, fast, extensible JSON encoder/decoder for Python
 Summary(pl):	Prosty, szybki, rozszerzalny (de)koder JSON dla Pythona
 Name:		python-%{module}
