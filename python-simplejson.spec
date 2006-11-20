@@ -1,4 +1,4 @@
-# $Revision: 1.9 $
+# $Revision: 1.9.2.1 $
 %define		module		simplejson
 %define     python_version  2.4
 Summary:	Simple, fast, extensible JSON encoder/decoder for Python
@@ -15,6 +15,7 @@ BuildRequires:	python >= %{python_version}
 BuildRequires:	python-setuptools >= 0.6-0.c1
 BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-libs
+Requires:   python-setuptools
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
