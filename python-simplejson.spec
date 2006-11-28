@@ -1,6 +1,5 @@
-# $Revision: 1.11 $
+# $Revision: 1.12 $
 %define		module		simplejson
-%define		python_version	2.5
 Summary:	Simple, fast, extensible JSON encoder/decoder for Python
 Summary(pl):	Prosty, szybki, rozszerzalny (de)koder JSON dla Pythona
 Name:		python-%{module}
@@ -11,7 +10,7 @@ Group:		Libraries
 Source0:	http://cheeseshop.python.org/packages/source/s/simplejson/%{module}-%{version}.tar.gz
 # Source0-md5:	5fbad786a4b151d44a9b1e1e157e5510
 URL:		http://undefined.org/python/#simplejson
-BuildRequires:	python >= %{python_version}
+BuildRequires:	python >= 1:2.5
 BuildRequires:	python-setuptools >= 0.6-0.c1
 BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-libs
@@ -51,4 +50,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %dir %{py_sitescriptdir}/simplejson
 %{py_sitescriptdir}/simplejson/*.py[co]
-%{py_sitescriptdir}/simplejson-%{version}-py%{python_version}.egg-info
+%{py_sitescriptdir}/simplejson-%{version}-py*.egg-info
