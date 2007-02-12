@@ -1,7 +1,7 @@
-# $Revision: 1.12 $
+# $Revision: 1.13 $
 %define		module		simplejson
 Summary:	Simple, fast, extensible JSON encoder/decoder for Python
-Summary(pl):	Prosty, szybki, rozszerzalny (de)koder JSON dla Pythona
+Summary(pl.UTF-8):   Prosty, szybki, rozszerzalny (de)koder JSON dla Pythona
 Name:		python-%{module}
 Version:	1.4
 Release:	0.4
@@ -22,10 +22,10 @@ simplejson is a simple, fast, complete, correct and extensible JSON
 <http://json.org/> encoder and decoder for Python 2.3+. It is pure
 Python code with no dependencies.
 
-%description -l pl
-simplejson to prosty, szybki, pe≥ny, poprawny i rozszerzalny koder i
+%description -l pl.UTF-8
+simplejson to prosty, szybki, pe≈Çny, poprawny i rozszerzalny koder i
 dekoder JSON (<http://json.org/>) dla Pythona 2.3 i nowszych wersji.
-Jest to kod wy≥±cznie w Pythonie bez dodatkowych zaleøno∂ci.
+Jest to kod wy≈ÇƒÖcznie w Pythonie bez dodatkowych zale≈ºno≈õci.
 
 %prep
 %setup -qn %{module}-%{version}
