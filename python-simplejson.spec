@@ -1,4 +1,4 @@
-# $Revision: 1.16 $
+# TODO: optflags
 %define		module		simplejson
 Summary:	Simple, fast, extensible JSON encoder/decoder for Python
 Summary(pl.UTF-8):	Prosty, szybki, rozszerzalny (de)koder JSON dla Pythona
@@ -18,24 +18,22 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 simplejson is a simple, fast, complete, correct and extensible JSON
-<http://json.org/> encoder and decoder for Python 2.3+. It is pure
-Python code with no dependencies.
+<http://json.org/> encoder and decoder for Python 2.3+.
 
 %description -l pl.UTF-8
 simplejson to prosty, szybki, pełny, poprawny i rozszerzalny koder i
 dekoder JSON (<http://json.org/>) dla Pythona 2.3 i nowszych wersji.
-Jest to kod wyłącznie w Pythonie bez dodatkowych zależności.
 
 %prep
 %setup -qn %{module}-%{version}
 
 %build
-python setup.py build
+%{__python} setup.py build
 	
 %install
 rm -rf $RPM_BUILD_ROOT
 
-python setup.py install \
+%{__python} setup.py install \
 	--root=$RPM_BUILD_ROOT \
 	--optimize=2
 
@@ -49,5 +47,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %dir %{py_sitedir}/simplejson
 %{py_sitedir}/simplejson/*.py[co]
-%{py_sitedir}/simplejson/*.so
+%attr(755,root,root) %{py_sitedir}/simplejson/*.so
 %{py_sitedir}/simplejson-%{version}-py*.egg-info
