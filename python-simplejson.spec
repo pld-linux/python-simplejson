@@ -1,55 +1,51 @@
-# $Revision: 1.9.2.1 $
+# TODO: optflags
 %define		module		simplejson
-%define     python_version  2.4
 Summary:	Simple, fast, extensible JSON encoder/decoder for Python
-Summary(pl):	Prosty, szybki, rozszerzalny (de)koder JSON dla Pythona
+Summary(pl.UTF-8):	Prosty, szybki, rozszerzalny (de)koder JSON dla Pythona
 Name:		python-%{module}
-Version:	1.4
-Release:	0.4
+Version:	2.0.3
+Release:	1
 License:	MIT
 Group:		Libraries
-Source0:	http://cheeseshop.python.org/packages/source/s/simplejson/%{module}-%{version}.tar.gz
-# Source0-md5:	5fbad786a4b151d44a9b1e1e157e5510
+Source0:	http://pypi.python.org/packages/source/s/%{module}/%{module}-%{version}.tar.gz
+# Source0-md5:	6da5d665c9e772ac65eae9b4ce6d737b
 URL:		http://undefined.org/python/#simplejson
-BuildRequires:	python >= %{python_version}
+BuildRequires:	python >= 1:2.4
 BuildRequires:	python-setuptools >= 0.6-0.c1
 BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-libs
-Requires:   python-setuptools
-BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 simplejson is a simple, fast, complete, correct and extensible JSON
-<http://json.org/> encoder and decoder for Python 2.3+. It is pure
-Python code with no dependencies.
+<http://json.org/> encoder and decoder for Python 2.4+.
 
-%description -l pl
-simplejson to prosty, szybki, pe≥ny, poprawny i rozszerzalny koder i
-dekoder JSON (<http://json.org/>) dla Pythona 2.3 i nowszych wersji.
-Jest to kod wy≥±cznie w Pythonie bez dodatkowych zaleøno∂ci.
+%description -l pl.UTF-8
+simplejson to prosty, szybki, pe≈Çny, poprawny i rozszerzalny koder i
+dekoder JSON (<http://json.org/>) dla Pythona 2.4 i nowszych wersji.
 
 %prep
 %setup -qn %{module}-%{version}
 
 %build
-python setup.py build
+%{__python} setup.py build
 	
 %install
 rm -rf $RPM_BUILD_ROOT
 
-python setup.py install \
+%{__python} setup.py install \
 	--root=$RPM_BUILD_ROOT \
 	--optimize=2
 
 %py_postclean
-rm -rf $RPM_BUILD_ROOT%{py_sitescriptdir}/simplejson/tests
+rm -rf $RPM_BUILD_ROOT%{py_sitedir}/simplejson/tests
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%dir %{py_sitescriptdir}/simplejson
-%{py_sitescriptdir}/simplejson/*.py[co]
-%{py_sitescriptdir}/simplejson-%{version}-py%{python_version}.egg-info
+%dir %{py_sitedir}/simplejson
+%{py_sitedir}/simplejson/*.py[co]
+%attr(755,root,root) %{py_sitedir}/simplejson/*.so
+%{py_sitedir}/simplejson-%{version}-py*.egg-info
