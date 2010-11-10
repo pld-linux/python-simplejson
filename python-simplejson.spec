@@ -11,6 +11,7 @@ Source0:	http://pypi.python.org/packages/source/s/%{module}/%{module}-%{version}
 # Source0-md5:	a856f9ae9ab3749991a93ddeafadc554
 URL:		http://undefined.org/python/#simplejson
 BuildRequires:	python >= 1:2.4
+BuildRequires:	python-devel
 BuildRequires:	python-setuptools >= 0.6-0.c1
 BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-libs
