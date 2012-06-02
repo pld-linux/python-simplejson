@@ -3,12 +3,12 @@
 Summary:	Simple, fast, extensible JSON encoder/decoder for Python
 Summary(pl.UTF-8):	Prosty, szybki, rozszerzalny (de)koder JSON dla Pythona
 Name:		python-%{module}
-Version:	2.3.2
+Version:	2.5.2
 Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	http://pypi.python.org/packages/source/s/%{module}/%{module}-%{version}.tar.gz
-# Source0-md5:	0863e016f682f06ead07dd9efad95194
+# Source0-md5:	d7a7acf0bd7681bd116b5c981d2f7959
 URL:		http://undefined.org/python/#simplejson
 BuildRequires:	python >= 1:2.4
 BuildRequires:	python-devel
