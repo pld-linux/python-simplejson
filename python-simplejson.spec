@@ -1,3 +1,4 @@
+#
 # Conditional build:
 %bcond_without  python2         # Python 2.x module
 %bcond_without  python3         # Python 3.x module
@@ -6,21 +7,21 @@
 Summary:	Simple, fast, extensible JSON encoder/decoder for Python
 Summary(pl.UTF-8):	Prosty, szybki, rozszerzalny (de)koder JSON dla Pythona
 Name:		python-%{module}
-Version:	3.4.1
-Release:	2
+Version:	3.6.5
+Release:	1
 License:	MIT or AFL v2.1
 Group:		Libraries
-Source0:	http://pypi.python.org/packages/source/s/simplejson/%{module}-%{version}.tar.gz
-# Source0-md5:	5ab77a58759fcdfc14ecbe62a0775847
+Source0:	https://pypi.python.org/packages/source/s/simplejson/%{module}-%{version}.tar.gz
+# Source0-md5:	b65dc21c7aaad14c6b4ad0d9179e437d
 URL:		http://undefined.org/python/#simplejson
 %if %{with python2}
 BuildRequires:	python >= 1:2.5
-BuildRequires:	python-devel
+BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	python-setuptools >= 0.6-0.c1
 %endif
 %if %{with python3}
-BuildRequires:	python3 >= 1:3.0
-BuildRequires:	python3-devel
+BuildRequires:	python3 >= 1:3.3
+BuildRequires:	python3-devel >= 1:3.3
 %endif
 BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-libs
