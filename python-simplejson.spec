@@ -7,13 +7,14 @@
 Summary:	Simple, fast, extensible JSON encoder/decoder for Python
 Summary(pl.UTF-8):	Prosty, szybki, rozszerzalny (de)koder JSON dla Pythona
 Name:		python-%{module}
-Version:	3.6.5
-Release:	2
+Version:	3.8.0
+Release:	1
 License:	MIT or AFL v2.1
 Group:		Libraries
+#Source0Download: https://pypi.python.org/pypi/simplejson
 Source0:	https://pypi.python.org/packages/source/s/simplejson/%{module}-%{version}.tar.gz
-# Source0-md5:	b65dc21c7aaad14c6b4ad0d9179e437d
-URL:		http://undefined.org/python/#simplejson
+# Source0-md5:	72f3b93a6f9808df81535f79e79565a2
+URL:		http://simplejson.readthedocs.org/
 %if %{with python2}
 BuildRequires:	python >= 1:2.5
 BuildRequires:	python-devel >= 1:2.5
@@ -97,7 +98,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc CHANGES.txt LICENSE.txt README.rst
 %dir %{py_sitedir}/simplejson
 %{py_sitedir}/simplejson/*.py[co]
-%attr(755,root,root) %{py_sitedir}/simplejson/*.so
+%attr(755,root,root) %{py_sitedir}/simplejson/_speedups.so
 %{py_sitedir}/simplejson-%{version}-py*.egg-info
 %endif
 
@@ -107,6 +108,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{py3_sitedir}/simplejson
 %{py3_sitedir}/simplejson/__pycache__
 %{py3_sitedir}/simplejson/*.py
-%attr(755,root,root) %{py3_sitedir}/simplejson/*.so
+%attr(755,root,root) %{py3_sitedir}/simplejson/_speedups.cpython-*.so
 %{py3_sitedir}/simplejson-%{version}-py*.egg-info
 %endif
