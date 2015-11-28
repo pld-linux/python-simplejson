@@ -54,15 +54,11 @@ dekoder JSON (<http://json.org/>) dla Pythona 3.
 
 %build
 %if %{with python2}
-CC="%{__cc}" \
-CFLAGS="%{rpmcflags}" \
-%{__python} setup.py build --build-base py2
+%py_build --build-base py2
 %endif
 
 %if %{with python3}
-CC="%{__cc}" \
-CFLAGS="%{rpmcflags}" \
-%{__python3} setup.py build --build-base py3
+%py3_build --build-base py3
 %endif
 
 %install
