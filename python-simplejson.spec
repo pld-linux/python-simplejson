@@ -15,6 +15,7 @@ Group:		Libraries
 Source0:	https://pypi.python.org/packages/source/s/simplejson/%{module}-%{version}.tar.gz
 # Source0-md5:	72f3b93a6f9808df81535f79e79565a2
 URL:		http://simplejson.readthedocs.org/
+BuildRequires:	rpmbuild(macros) >= 1.710
 %if %{with python2}
 BuildRequires:	python >= 1:2.5
 BuildRequires:	python-devel >= 1:2.5
