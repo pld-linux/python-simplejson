@@ -8,7 +8,7 @@ Summary:	Simple, fast, extensible JSON encoder/decoder for Python
 Summary(pl.UTF-8):	Prosty, szybki, rozszerzalny (de)koder JSON dla Pythona
 Name:		python-%{module}
 Version:	3.8.0
-Release:	2
+Release:	3
 License:	MIT or AFL v2.1
 Group:		Libraries
 #Source0Download: https://pypi.python.org/pypi/simplejson
@@ -55,35 +55,27 @@ dekoder JSON (<http://json.org/>) dla Pythona 3.
 
 %build
 %if %{with python2}
-%py_build --build-base py2
+%py_build
 %endif
 
 %if %{with python3}
-%py3_build --build-base py3
+%py3_build
 %endif
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %if %{with python2}
-%{__python} setup.py \
-	build --build-base py2 \
-	install \
-	--optimize=2 \
-	--root=$RPM_BUILD_ROOT
+%py_install
 
-rm -rf $RPM_BUILD_ROOT%{py_sitedir}/simplejson/tests
+%{__rm} -r $RPM_BUILD_ROOT%{py_sitedir}/simplejson/tests
 %py_postclean
 %endif
 
 %if %{with python3}
-%{__python3} setup.py \
-	build --build-base py3 \
-	install \
-	--optimize=2 \
-	--root=$RPM_BUILD_ROOT
+%py3_install
 
-rm -rf $RPM_BUILD_ROOT%{py3_sitedir}/simplejson/tests
+%{__rm} -r $RPM_BUILD_ROOT%{py3_sitedir}/simplejson/tests
 %endif
 
 %clean
