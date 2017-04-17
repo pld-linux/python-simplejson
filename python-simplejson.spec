@@ -7,26 +7,27 @@
 Summary:	Simple, fast, extensible JSON encoder/decoder for Python
 Summary(pl.UTF-8):	Prosty, szybki, rozszerzalny (de)koder JSON dla Pythona
 Name:		python-%{module}
-Version:	3.8.0
-Release:	4
+Version:	3.10.0
+Release:	1
 License:	MIT or AFL v2.1
 Group:		Libraries
 #Source0Download: https://pypi.python.org/pypi/simplejson
-Source0:	https://pypi.python.org/packages/source/s/simplejson/%{module}-%{version}.tar.gz
-# Source0-md5:	72f3b93a6f9808df81535f79e79565a2
+Source0:	https://files.pythonhosted.org/packages/source/s/simplejson/%{module}-%{version}.tar.gz
+# Source0-md5:	426a9631d22851a7a970b1a677368b15
 URL:		http://simplejson.readthedocs.org/
 BuildRequires:	rpmbuild(macros) >= 1.710
 %if %{with python2}
 BuildRequires:	python >= 1:2.5
 BuildRequires:	python-devel >= 1:2.5
-BuildRequires:	python-setuptools >= 0.6-0.c1
+BuildRequires:	python-setuptools >= 1:7
 %endif
 %if %{with python3}
 BuildRequires:	python3 >= 1:3.3
 BuildRequires:	python3-devel >= 1:3.3
+BuildRequires:	python3-setuptools >= 1:7
 %endif
 BuildRequires:	rpm-pythonprov
-%pyrequires_eq	python-libs
+Requires:	python-libs >= 1:2.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -41,6 +42,7 @@ dekoder JSON (<http://json.org/>) dla Pythona 2.5 i nowszych wersji.
 Summary:	Simple, fast, extensible JSON encoder/decoder for Python 3
 Summary(pl.UTF-8):	Prosty, szybki, rozszerzalny (de)koder JSON dla Pythona 3
 Group:		Libraries
+Requires:	python3-libs >= 1:3.3
 
 %description -n python3-%{module}
 simplejson is a simple, fast, complete, correct and extensible JSON
