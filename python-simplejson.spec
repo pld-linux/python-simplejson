@@ -7,15 +7,15 @@
 Summary:	Simple, fast, extensible JSON encoder/decoder for Python
 Summary(pl.UTF-8):	Prosty, szybki, rozszerzalny (de)koder JSON dla Pythona
 Name:		python-%{module}
-Version:	3.10.0
-Release:	3
+Version:	3.17.2
+Release:	1
 License:	MIT or AFL v2.1
 Group:		Libraries
-#Source0Download: https://pypi.python.org/pypi/simplejson
+#Source0Download: https://pypi.org/pypi/simplejson
 Source0:	https://files.pythonhosted.org/packages/source/s/simplejson/%{module}-%{version}.tar.gz
-# Source0-md5:	426a9631d22851a7a970b1a677368b15
-URL:		http://simplejson.readthedocs.org/
-BuildRequires:	rpmbuild(macros) >= 1.710
+# Source0-md5:	27fba3bc75a32318bd3b163b8a31aa7e
+URL:		https://simplejson.readthedocs.io/
+BuildRequires:	rpmbuild(macros) >= 1.714
 %if %{with python2}
 BuildRequires:	python >= 1:2.5
 BuildRequires:	python-devel >= 1:2.5
@@ -96,6 +96,7 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with python3}
 %files -n python3-%{module}
 %defattr(644,root,root,755)
+%doc CHANGES.txt LICENSE.txt README.rst
 %dir %{py3_sitedir}/simplejson
 %{py3_sitedir}/simplejson/__pycache__
 %{py3_sitedir}/simplejson/*.py
